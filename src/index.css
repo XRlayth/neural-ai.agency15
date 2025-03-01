@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-opacity-10 bg-white backdrop-blur-lg border border-white/10 rounded-xl;
+  }
+  
+  .neon-border {
+    @apply relative overflow-hidden;
+  }
+  
+  .neon-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl;
+    background: linear-gradient(45deg, #00f7ff, #4facfe, #00f7ff);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .neon-border:hover::before {
+    opacity: 0.5;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00f7ff] to-[#4facfe];
+  }
+
+  /* Custom cursor styles */
+  .custom-cursor {
+    @apply fixed pointer-events-none z-[9999];
+    width: 2px;
+    height: 2px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 150px 75px rgba(0, 247, 255, 0.25);
+    opacity: 0.9;
+    mix-blend-mode: screen;
+  }
+
+  /* Frame hover effect */
+  .frame-hover {
+    @apply rounded-lg transition-all duration-300 px-3 py-2;
+  }
+
+  .frame-hover:hover {
+    @apply bg-white/10;
+  }
+  
+  /* Holographic effect for headings */
+  @keyframes holographic {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .holographic-text {
+    background: linear-gradient(90deg, #ffffff, #00f7ff, #ffffff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: holographic 3s linear infinite;
+  }
+  
+  /* Animated background gradient */
+  .animated-gradient {
+    background: linear-gradient(-45deg, #000000, #001a1a, #000000, #001a1a);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Neon glow for interactive elements */
+  .neon-glow {
+    transition: all 0.3s ease;
+  }
+  
+  .neon-glow:hover, .neon-glow:focus {
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.5), 0 0 20px rgba(0, 247, 255, 0.3);
+    border-color: #00f7ff;
+  }
+}
+
+/* Make cursor glow visible on all pages */
+body {
+  cursor: default !important;
+}
