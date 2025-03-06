@@ -26,7 +26,7 @@ function Header() {
           className="flex items-center space-x-3 frame-hover"
           onClick={() => window.scrollTo(0, 0)}
         >
-          <img src="/4b3a0a67-b1f0-457f-ae8d-31aba45bb58a.png" alt="Neural AI" className="h-10" />
+          <img src="4b3a0a67-b1f0-457f-ae8d-31aba45bb58a.png" className="h-10" />
           <span className="text-white text-xl font-bold">Neural AI</span>
         </Link>
         
